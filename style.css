@@ -1,0 +1,415 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap'); /*Länk fonten som används */
+
+
+:root /*skapar "genväg" till färgerna, lättare till ändring på hela sidan*/ 
+{
+    --color-dark:#0B0F19;
+    --color-darkgrey:#33354D;
+    --color-primary:#6366f1;
+    --color-mediumgray: #565973;
+    --color-gray:#9397AD;
+    --color-white:#ffff;
+    --color-lightgray: #e2e5f1;
+ }
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* ??? */
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;  
+}
+
+/*Mina containrar*/
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: 1rem;
+}
+
+.navbar {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 50px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  /* Mina knappar*/
+.btn-primary {
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 8px;
+    padding: 12px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    }
+
+.btn-primary:hover {
+        background-color: #9e9fee;
+    }
+   
+.btn-app {
+        border: none;
+        background-color: var(--color-dark);
+        color: var(--color-white);
+        border-radius: 8px;
+        padding: 12px 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        }
+.btn-app:hover {
+            background-color: var(--color-mediumgray);
+        }
+
+.btn-circle {
+    height: 44px;
+    width: 44px;
+    display: flex;
+    justify-content: center;   
+    align-items: center;   
+    border-radius: 50%;
+    border: 1px solid var(--color-lightgray);
+    background-color: var(--color-white);
+    color: var(--color-darkgrey);
+}
+
+ /* Sakerna till navigationen, högst upp på sidan*/
+
+/* Detta är features*/
+
+  .nav-link {
+    color: var(--color-darkgrey);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .nav-link:hover {
+      text-decoration: underline;
+      color: var(--color-primary);
+  }
+
+ /* Detta är darkmode switchen*/
+
+ .btn-toggle-switch {
+  display: flex;
+  align-items: center;
+ }
+
+ #darkmode-text {
+    color: var(--color-mediumgray);
+    font-weight: 600;
+    font-size: 18px;
+    padding-right: .5em
+}
+ a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.darkmode {
+    color: var(--color-mediumgray);
+    font-weight: 600;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width:0;
+    height:0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-gray);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--color-white);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--color-primary);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--color-primary);
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  .slider.round {
+    border-radius: 24px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+ /* Hero section*/
+
+ .hero {
+    background-image: linear-gradient(white, #f3eefc);
+    padding-bottom: 5rem;
+    overflow: hidden;
+    height: 600px;
+
+    .container {
+      margin: 5rem;
+      width: 80%;
+      padding: 3rem;
+      display: grid;
+      /*gap: 5rem;*/
+      justify-content: space-between;
+      grid-template-columns: 1fr 1fr;
+     
+      grid-template-areas:
+      "headline images"
+      "content  images";
+    }
+       
+
+    }
+
+    .headline {
+      grid-area: headline;
+      text-align: left;
+       
+        h1 {
+           font-size: 56px;
+           font-weight: 800;
+        }
+
+    }
+
+    .content {
+      grid-area: content;
+        text-align: center;
+
+         .p {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 3rem;
+         }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+
+        }
+        .discover-more {
+            color: var(--color-mediumgray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 10rem;
+           
+            
+        }
+
+      }
+ 
+       .images {
+          position: relative;
+          grid-area: images;
+          display: grid;
+    
+            .img-back {
+             position: absolute;
+              z-index: 0;
+              bottom: 0;
+              right: 100px;
+              width: 50%;
+              height: auto;
+    
+            }
+            .img-front {
+              position: absolute;
+              z-index: 0;
+              bottom: 0;
+              right: 0;
+              width: 50%;
+              height: auto;
+    
+            }
+
+    }
+
+    /*Logos på rad*/
+
+    .logos {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 17rem;
+      margin-right: 20rem;
+      margin-top: 5rem;
+      padding-bottom: 5rem;
+  }
+  
+  .logo-box {
+      border: 1px solid var(--color-lightgray);
+      border-radius: 8px;
+      height: 100px;
+      width: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  /*Appfeautres section*/
+
+  .appfeautres
+  {
+    height: 600px;
+    padding-bottom: 5rem;
+    grid-template-columns: 1fr 1fr;
+
+    .container {
+      display:grid;
+      margin: 5rem;
+      width: 80%;
+      padding: 3rem;
+      justify-content: space-between;
+      
+    }
+  }
+
+
+    .images {
+      position: relative;
+      width: 300px;
+
+      .iphone {
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 1; 
+    }
+    
+    .card {
+        position: absolute;
+        top: 80px; 
+        left: 55%;
+        transform: translateX(-45%); 
+        width: 110%; 
+        z-index: 2;
+    }
+    
+    }
+
+    
+.icons {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto;
+  grid-template-rows:   ;
+
+  h5 {
+    color: var(--color-dark);
+    font-size: 20px;
+    font-weight: 800;
+    grid-area: headline;
+  }
+
+  p {
+    color: var(--color-mediumgray);
+    font-size: 16px;
+    font-weight: 400;
+    grid-area: text;
+  }
+
+  bild {
+    grid-area: bild;
+  }
+}
+
+.icon {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto ;
+
+ 
+}
+
+ 
+
+
+
+
+
+.tre-mobiler {
+  background-color: #F3F6FF;
+}
+
+  .how {
+    padding-top: 4rem;
+    text-align: center;
+  }
+
+.row 
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  #padding {
+    padding: 2rem;
+  } 
+}
+
+.undertext {
+text-align: center;
+font-weight: 800;
+font-size: large;
+
+#texten {
+  padding-top: .5em;
+  text-align: center;
+  font-weight: 400;
+  font-size: small;
+  color: var(--color-mediumgray);
+}
+
+}
